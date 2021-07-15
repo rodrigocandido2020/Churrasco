@@ -1,0 +1,41 @@
+﻿@model Churrasco.Models.RelatorioEvento
+
+@{
+    ViewData["Title"] = "Relatório churrasco";
+}
+
+<h1>Relatório churrasco</h1>
+
+<b>Total Arrecadado:</b> @Model.TotalArrecadado<br />
+<b>Total gasto com comida:</b> @Model.TotalGastoComida<br />
+<b>Total gasto com bebida:</b> @Model.TotalGastoBebida<br />
+<b>Total gasto:</b> @Model.TotalGasto<br />
+<table class="table">
+
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Gastos</div>
+        <div class="card-body text-dark">
+            <h5 class="card-title">Informações</h5>
+            <p class="card-text">30% foi gasto com comida , 60% com bebida é 10% para o aluguel do local.</p>
+        </div>
+    </div>
+
+
+    <thead>
+        <tr>
+            <th>
+                Funcionários participantes no churrasco
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var nome in Model.NomeFuncionarios)
+        {
+        <tr>
+            <td>
+                @nome
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
